@@ -127,9 +127,9 @@
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
     <script>
         $("#submitBtn").click(function(){
-            user=$("email").val()+"\n";
-            alert('user');
-            $.post("http://db-alextatdev.rhcloud.com/membersman/emails.php",user,function(data,status){
+            email=$("#email").val()+"\n";
+            alert(email);
+            $.post("http://db-alextatdev.rhcloud.com/membersman/emails.php",{email:email},function(data,status){
                 if(status=="success")bootbox.alert("Thank you!! We will get you to the beta testing as soon as possible");
                 else bootbox.alert("Sorry but an unknown problem occured. Please try again later.");
             });
